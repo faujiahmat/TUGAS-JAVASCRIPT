@@ -7,7 +7,7 @@
 ul li {
   list-style: none;
   font-size: 1rem;
-  padding: 12px 20px 12px 60px;
+  padding: 12px 4rem 12px 60px;
   user-select: none;
   cursor: pointer;
   position: relative;
@@ -23,6 +23,8 @@ ul li {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  animation: muncul 1s ease 1;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -46,6 +48,15 @@ ul li::before {
   -o-border-radius: 50%;
 }
 
+@keyframes muncul {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 ul li.check-list {
   text-decoration: line-through;
 }
@@ -55,12 +66,21 @@ ul li.check-list::before {
 }
 
 .span {
-  background-color: rgb(150, 150, 150);
+  background-color: transparent;
   height: 100%;
-  width: 75px;
+  width: 3rem;
   position: absolute;
   top: auto;
-  right: 0px;
-  border-top-left-radius: 40%;
-  border-bottom-left-radius: 40%;
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: rgb(150, 150, 150);
+}
+
+.span:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
